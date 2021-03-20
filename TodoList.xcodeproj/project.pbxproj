@@ -35,15 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EDCD53E52601191400236C28 /* TODOListFirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODOListFirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCD53E52601191400236C28 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCD53E82601191400236C28 /* TODOListFirstAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListFirstAppApp.swift; sourceTree = "<group>"; };
 		EDCD53EC2601191900236C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDCD53EF2601191900236C28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDCD53F12601191900236C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDCD53F62601191900236C28 /* TODOListFirstAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODOListFirstAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCD53F62601191900236C28 /* TodoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCD53FA2601191900236C28 /* TODOListFirstAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListFirstAppTests.swift; sourceTree = "<group>"; };
 		EDCD53FC2601191900236C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDCD54012601191900236C28 /* TODOListFirstAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODOListFirstAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCD54012601191900236C28 /* TodoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCD54052601191900236C28 /* TODOListFirstAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOListFirstAppUITests.swift; sourceTree = "<group>"; };
 		EDCD54072601191900236C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDCD541926014F6900236C28 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -79,9 +79,9 @@
 		EDCD53DC2601191300236C28 = {
 			isa = PBXGroup;
 			children = (
-				EDCD53E72601191400236C28 /* TODOListFirstApp */,
-				EDCD53F92601191900236C28 /* TODOListFirstAppTests */,
-				EDCD54042601191900236C28 /* TODOListFirstAppUITests */,
+				EDCD53E72601191400236C28 /* TodoListApp */,
+				EDCD53F92601191900236C28 /* TodoListAppTests */,
+				EDCD54042601191900236C28 /* TodoListAppUITests */,
 				EDCD53E62601191400236C28 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,14 +89,14 @@
 		EDCD53E62601191400236C28 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDCD53E52601191400236C28 /* TODOListFirstApp.app */,
-				EDCD53F62601191900236C28 /* TODOListFirstAppTests.xctest */,
-				EDCD54012601191900236C28 /* TODOListFirstAppUITests.xctest */,
+				EDCD53E52601191400236C28 /* TodoList.app */,
+				EDCD53F62601191900236C28 /* TodoListTests.xctest */,
+				EDCD54012601191900236C28 /* TodoListUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDCD53E72601191400236C28 /* TODOListFirstApp */ = {
+		EDCD53E72601191400236C28 /* TodoListApp */ = {
 			isa = PBXGroup;
 			children = (
 				EDCD54212601524F00236C28 /* View */,
@@ -106,7 +106,7 @@
 				EDCD53F12601191900236C28 /* Info.plist */,
 				EDCD53EE2601191900236C28 /* Preview Content */,
 			);
-			path = TODOListFirstApp;
+			path = TodoListApp;
 			sourceTree = "<group>";
 		};
 		EDCD53EE2601191900236C28 /* Preview Content */ = {
@@ -117,22 +117,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EDCD53F92601191900236C28 /* TODOListFirstAppTests */ = {
+		EDCD53F92601191900236C28 /* TodoListAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				EDCD53FA2601191900236C28 /* TODOListFirstAppTests.swift */,
 				EDCD53FC2601191900236C28 /* Info.plist */,
 			);
-			path = TODOListFirstAppTests;
+			path = TodoListAppTests;
 			sourceTree = "<group>";
 		};
-		EDCD54042601191900236C28 /* TODOListFirstAppUITests */ = {
+		EDCD54042601191900236C28 /* TodoListAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				EDCD54052601191900236C28 /* TODOListFirstAppUITests.swift */,
 				EDCD54072601191900236C28 /* Info.plist */,
 			);
-			path = TODOListFirstAppUITests;
+			path = TodoListAppUITests;
 			sourceTree = "<group>";
 		};
 		EDCD541E2601523800236C28 /* Model */ = {
@@ -155,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDCD53E42601191400236C28 /* TODOListFirstApp */ = {
+		EDCD53E42601191400236C28 /* TodoList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDCD540A2601191900236C28 /* Build configuration list for PBXNativeTarget "TODOListFirstApp" */;
+			buildConfigurationList = EDCD540A2601191900236C28 /* Build configuration list for PBXNativeTarget "TodoList" */;
 			buildPhases = (
 				EDCD53E12601191400236C28 /* Sources */,
 				EDCD53E22601191400236C28 /* Frameworks */,
@@ -167,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = TODOListFirstApp;
+			name = TodoList;
 			productName = TODOListFirstApp;
-			productReference = EDCD53E52601191400236C28 /* TODOListFirstApp.app */;
+			productReference = EDCD53E52601191400236C28 /* TodoList.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EDCD53F52601191900236C28 /* TODOListFirstAppTests */ = {
+		EDCD53F52601191900236C28 /* TodoListTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDCD540D2601191900236C28 /* Build configuration list for PBXNativeTarget "TODOListFirstAppTests" */;
+			buildConfigurationList = EDCD540D2601191900236C28 /* Build configuration list for PBXNativeTarget "TodoListTests" */;
 			buildPhases = (
 				EDCD53F22601191900236C28 /* Sources */,
 				EDCD53F32601191900236C28 /* Frameworks */,
@@ -185,14 +185,14 @@
 			dependencies = (
 				EDCD53F82601191900236C28 /* PBXTargetDependency */,
 			);
-			name = TODOListFirstAppTests;
+			name = TodoListTests;
 			productName = TODOListFirstAppTests;
-			productReference = EDCD53F62601191900236C28 /* TODOListFirstAppTests.xctest */;
+			productReference = EDCD53F62601191900236C28 /* TodoListTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EDCD54002601191900236C28 /* TODOListFirstAppUITests */ = {
+		EDCD54002601191900236C28 /* TodoListUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDCD54102601191900236C28 /* Build configuration list for PBXNativeTarget "TODOListFirstAppUITests" */;
+			buildConfigurationList = EDCD54102601191900236C28 /* Build configuration list for PBXNativeTarget "TodoListUITests" */;
 			buildPhases = (
 				EDCD53FD2601191900236C28 /* Sources */,
 				EDCD53FE2601191900236C28 /* Frameworks */,
@@ -203,9 +203,9 @@
 			dependencies = (
 				EDCD54032601191900236C28 /* PBXTargetDependency */,
 			);
-			name = TODOListFirstAppUITests;
+			name = TodoListUITests;
 			productName = TODOListFirstAppUITests;
-			productReference = EDCD54012601191900236C28 /* TODOListFirstAppUITests.xctest */;
+			productReference = EDCD54012601191900236C28 /* TodoListUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EDCD53E02601191300236C28 /* Build configuration list for PBXProject "TODOListFirstApp" */;
+			buildConfigurationList = EDCD53E02601191300236C28 /* Build configuration list for PBXProject "TodoList" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,9 +243,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDCD53E42601191400236C28 /* TODOListFirstApp */,
-				EDCD53F52601191900236C28 /* TODOListFirstAppTests */,
-				EDCD54002601191900236C28 /* TODOListFirstAppUITests */,
+				EDCD53E42601191400236C28 /* TodoList */,
+				EDCD53F52601191900236C28 /* TodoListTests */,
+				EDCD54002601191900236C28 /* TodoListUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -309,12 +309,12 @@
 /* Begin PBXTargetDependency section */
 		EDCD53F82601191900236C28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDCD53E42601191400236C28 /* TODOListFirstApp */;
+			target = EDCD53E42601191400236C28 /* TodoList */;
 			targetProxy = EDCD53F72601191900236C28 /* PBXContainerItemProxy */;
 		};
 		EDCD54032601191900236C28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDCD53E42601191400236C28 /* TODOListFirstApp */;
+			target = EDCD53E42601191400236C28 /* TodoList */;
 			targetProxy = EDCD54022601191900236C28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -495,7 +495,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TODOListFirstApp.app/TODOListFirstApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoList.app/TodoList";
 			};
 			name = Debug;
 		};
@@ -516,7 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TODOListFirstApp.app/TODOListFirstApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodoList.app/TodoList";
 			};
 			name = Release;
 		};
@@ -561,7 +561,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDCD53E02601191300236C28 /* Build configuration list for PBXProject "TODOListFirstApp" */ = {
+		EDCD53E02601191300236C28 /* Build configuration list for PBXProject "TodoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDCD54082601191900236C28 /* Debug */,
@@ -570,7 +570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDCD540A2601191900236C28 /* Build configuration list for PBXNativeTarget "TODOListFirstApp" */ = {
+		EDCD540A2601191900236C28 /* Build configuration list for PBXNativeTarget "TodoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDCD540B2601191900236C28 /* Debug */,
@@ -579,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDCD540D2601191900236C28 /* Build configuration list for PBXNativeTarget "TODOListFirstAppTests" */ = {
+		EDCD540D2601191900236C28 /* Build configuration list for PBXNativeTarget "TodoListTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDCD540E2601191900236C28 /* Debug */,
@@ -588,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDCD54102601191900236C28 /* Build configuration list for PBXNativeTarget "TODOListFirstAppUITests" */ = {
+		EDCD54102601191900236C28 /* Build configuration list for PBXNativeTarget "TodoListUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDCD54112601191900236C28 /* Debug */,

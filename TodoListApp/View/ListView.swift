@@ -7,15 +7,18 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ListView: View {
+    var tasks: [Task] = testData
+    
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ListView()
     }
 }

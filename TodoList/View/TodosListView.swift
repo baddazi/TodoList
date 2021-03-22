@@ -26,9 +26,9 @@ struct TodosListView: View{
             .navigationBarTitle("Todos")
             .navigationBarItems(trailing:
                                     Button(action: { self.todos.append(Todo(createAT: Date()))}) {
-                                        Image(systemName: "plus.circle.fill") //(8)
+                                        Image(systemName: "plus.circle.fill")
                                             .resizable()
-                                            .frame(width: 30, height: 30) // (11)
+                                            .frame(width: 30, height: 30)
                                     })
             
         }

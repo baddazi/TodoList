@@ -9,38 +9,27 @@ import Foundation
 import SwiftUI
 
 struct TodosListView: View{
-    @State var todos: [Todo]=[Todo.sample, Todo.sample2]
+    
+    @State var todos: [Todo] = [Todo.sample, Todo.sample2]
     
     var body: some View{
-
         NavigationView {
-            VStack(alignment: .leading) {
-                List {
-                    ForEach(self.todos){ todo in
-                        Text("\(todo.createAT))")
-                    }
+            List {
+                ForEach(self.todos){ todo in
+                    Text("\(todo.createAt))")
                 }
-                
-                
             }
             .navigationBarTitle("Todos")
             .navigationBarItems(trailing:
-                                    Button(action: { self.todos.append(Todo(createAT: Date()))}) {
+                                    Button(action: { self.todos.append(Todo(createAt: Date())) }) {
                                         Image(systemName: "plus.circle.fill")
-                                            .resizable()
-                                            .frame(width: 30, height: 30)
                                     })
-            
         }
     }
-    
 }
 
 struct TodosListView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
             TodosListView()
-            
-        }
     }
 }

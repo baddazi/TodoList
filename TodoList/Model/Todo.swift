@@ -8,15 +8,17 @@
 import Foundation
 
 struct Todo: Identifiable{
-    var id: Date = Date()
-    var createAT: Date
+    var createAt: Date
+    var id :Date {
+        Date()
+    }
     
     
 
 }
 
 extension Todo{
-    static var sample: Self = .init(createAT:Date(timeIntervalSinceReferenceDate: 123456789.0))
-    static var sample2: Self = .init(createAT: Date(timeIntervalSinceReferenceDate: 123499999.0))
+    static var sample: Self = .init(createAt:Date(timeIntervalSinceReferenceDate: 123456789.0))
+    static var sample2: Self = .init(createAt: Date(timeIntervalSinceReferenceDate: 123499999.0))
 }
 

@@ -12,8 +12,8 @@
 		EDD9EF842606C776009D5BCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD9EF832606C776009D5BCB /* Preview Assets.xcassets */; };
 		EDD9EF8F2606C776009D5BCB /* TodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9EF8E2606C776009D5BCB /* TodoListTests.swift */; };
 		EDD9EF9A2606C776009D5BCB /* TodoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9EF992606C776009D5BCB /* TodoListUITests.swift */; };
-		EDD9EFB02606CA23009D5BCB /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9EFAF2606CA23009D5BCB /* Todo.swift */; };
 		EDD9EFB82606CA7A009D5BCB /* TodosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9EFB72606CA7A009D5BCB /* TodosListView.swift */; };
+		EDD9EFC42606CDF4009D5BCB /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD9EFC32606CDF4009D5BCB /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,8 @@
 		EDD9EF952606C776009D5BCB /* TodoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD9EF992606C776009D5BCB /* TodoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListUITests.swift; sourceTree = "<group>"; };
 		EDD9EF9B2606C776009D5BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDD9EFAF2606CA23009D5BCB /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		EDD9EFB72606CA7A009D5BCB /* TodosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosListView.swift; sourceTree = "<group>"; };
+		EDD9EFC32606CDF4009D5BCB /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		EDD9EF7B2606C772009D5BCB /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				EDD9EFC22606CDDF009D5BCB /* Model */,
 				EDD9EFAE2606C9D7009D5BCB /* View */,
-				EDD9EFAD2606C9D0009D5BCB /* Model */,
 				EDD9EF7C2606C772009D5BCB /* TodoListApp.swift */,
 				EDD9EF802606C776009D5BCB /* Assets.xcassets */,
 				EDD9EF852606C776009D5BCB /* Info.plist */,
@@ -133,20 +133,20 @@
 			path = TodoListUITests;
 			sourceTree = "<group>";
 		};
-		EDD9EFAD2606C9D0009D5BCB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EDD9EFAF2606CA23009D5BCB /* Todo.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		EDD9EFAE2606C9D7009D5BCB /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EDD9EFB72606CA7A009D5BCB /* TodosListView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EDD9EFC22606CDDF009D5BCB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDD9EFC32606CDF4009D5BCB /* Todo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,8 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD9EFB02606CA23009D5BCB /* Todo.swift in Sources */,
 				EDD9EFB82606CA7A009D5BCB /* TodosListView.swift in Sources */,
+				EDD9EFC42606CDF4009D5BCB /* Todo.swift in Sources */,
 				EDD9EF7D2606C772009D5BCB /* TodoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoList/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TodoList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -460,6 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoList/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TodoList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

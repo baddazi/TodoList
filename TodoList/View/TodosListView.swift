@@ -15,13 +15,13 @@ struct TodosListView: View{
     var body: some View{
         NavigationView {
             List {
-                ForEach(self.todos){ todo in
-                    Text("\(todo.createAt))")
+                ForEach(self.todos) { todo in
+                    Text("\(todo.createdAt))")
                 }
             }
             .navigationBarTitle("Todos")
             .navigationBarItems(trailing:
-                                    Button(action: { self.todos.append(Todo(createAt: Date())) }) {
+                                    Button(action: { self.todos.append(Todo(createdAt: Date())) }) {
                                         Image(systemName: "plus.circle.fill")
                                     })
         }

@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct TodosListView: View{
+struct TodosListView: View {
+    @Environment(\.[key: \Disk.self]) private var disk
+    @Environment(\.[key: \Throw.self]) private var `throw`
     
-    @State var todos: [Todo] = TodoJsonDecoder().getTodosFromJson()
+    @State var todos: [Todo] = []
     
-    var body: some View{
+    var body: some View {
         NavigationView {
             List {
                 ForEach(self.todos) { todo in
@@ -20,17 +22,26 @@ struct TodosListView: View{
                 }
             }
             .navigationBarTitle("Todos")
-            .navigationBarItems(trailing:
-                                    Button(action: { addTodo() }) {
-                                        Image(systemName: "plus.circle.fill")
-                                    })
-        }.navigationViewStyle(StackNavigationViewStyle())
-        
+            .navigationBarItems(
+                trailing:
+                    Button(action: createTodo) {
+                        Image(systemName: "plus.circle.fill")
+                    }
+            )
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onFirstAppear {
+            `throw`.try {
+                todos = try disk.loadTodos()
+            }
+        }
     }
     
-    func addTodo(){
+    func createTodo(){
         self.todos.append(Todo(createdAt: Date()))
-        TodoJsonEncoder().writeTodosToJson(todos:todos)
+        `throw`.try {
+           try disk.saveTodos(todos)
+        }
     }
 }
 

@@ -8,28 +8,45 @@
 import Foundation
 import SwiftUI
 
-struct TodosListView: View{
+struct TodosListView: View {
+    @Environment(\.[key: \Disk.self]) private var disk
+    @Environment(\.[key: \Throw.self]) private var `throw`
     
-    @State var todos: [Todo] = [Todo.sample, Todo.sample2]
+    @State var todos: [Todo] = []
     
-    var body: some View{
+    var body: some View {
         NavigationView {
             List {
                 ForEach(self.todos) { todo in
-                    Text("\(todo.createdAt))")
+                    Text("\(todo.createdAt))".prefix(20))
                 }
             }
             .navigationBarTitle("Todos")
-            .navigationBarItems(trailing:
-                                    Button(action: { self.todos.append(Todo(createdAt: Date())) }) {
-                                        Image(systemName: "plus.circle.fill")
-                                    })
+            .navigationBarItems(
+                trailing:
+                    Button(action: createTodo) {
+                        Image(systemName: "plus.circle.fill")
+                    }
+            )
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onFirstAppear {
+            `throw`.try {
+                todos = try disk.loadTodos()
+            }
+        }
+    }
+    
+    func createTodo(){
+        self.todos.append(Todo(createdAt: Date()))
+        `throw`.try {
+           try disk.saveTodos(todos)
         }
     }
 }
 
 struct TodosListView_Previews: PreviewProvider {
     static var previews: some View {
-            TodosListView()
+        TodosListView()
     }
 }

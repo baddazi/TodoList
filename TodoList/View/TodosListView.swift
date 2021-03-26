@@ -9,25 +9,21 @@ struct TodosListView: View {
     
     @State var todos: [Todo] = []
     @State var displayedTodos: [Todo] = []
-    @State var isThisWeekChecked = false {
-        didSet {
-            filterTodos()
-        }
-    }
-    @State var searchedText: String = "" {
-        didSet {
-            filterTodos()
-        }
-    }
+    @State var isThisWeekChecked = false
+    @State var searchedText: String = ""
     
     var body: some View {
         let isThisWeekCheckedBinding = Binding<Bool>(
             get: {isThisWeekChecked},
-            set: {isThisWeekChecked = $0}
+            set: {isThisWeekChecked = $0
+                filterTodos()
+            }
         )
         let textBinding = Binding<String>(
             get: {searchedText},
-            set: {searchedText = $0} 
+            set: {searchedText = $0
+                filterTodos()
+            }
         )
         
         NavigationView {
@@ -60,12 +56,22 @@ struct TodosListView: View {
     }
     
     func filterTodos() {
-        displayedTodos = todos.filter { todo in (searchedText.isEmpty || todo.name.uppercased().contains(searchedText.uppercased())) && (!isThisWeekChecked || (currentDate().timeIntervalSinceReferenceDate - todo.createdAt.timeIntervalSinceReferenceDate) < 604800 )}
+        displayedTodos = todos.filter { todo in (searchedText.isEmpty || todo.name.uppercased().contains(searchedText.uppercased())) && (!isThisWeekChecked || inThisWeek(todo: todo)) }
     }
-   
+    func inThisWeek(todo: Todo) -> Bool {
+        let calendar = Calendar.current
+        let callculatedStartOfWeek=(Int(currentDate().timeIntervalSinceReferenceDate)) - (calendar.component(.weekday, from: currentDate())-1)  * 24 * 60 * 60;
+        
+        if((todo.createdAt) > calendar.startOfDay(for: Date(timeIntervalSinceReferenceDate: Double(callculatedStartOfWeek)))) {
+            return true
+        }
+        
+        return false
+    }
+    
     func createTodo() {
         
-        self.todos.append(Todo(createdAt: Date(),name: "New Todo Name"))
+        self.todos.append(Todo(createdAt: currentDate(),name: "New Todo Name"))
         filterTodos()
         `throw`.try {
             try disk.saveTodos(todos)

@@ -41,6 +41,7 @@ struct TodosListView: View {
         self.todos.append(Todo(createdAt: Date()))
         `throw`.try {
            try disk.saveTodos(todos)
+            print(String((todos.first?.createdAt)!.timeIntervalSinceReferenceDate))
         }
     }
 }

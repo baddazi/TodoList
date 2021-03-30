@@ -15,14 +15,19 @@ struct Database1: EnvironmentKey {
     static var defaultValue: Self = .init()
     
     
-    var saveTodos: ([Todo]) throws -> Void = { todos in
-        //todos.map{ref.child(String($0.createdAt.timeIntervalSinceReferenceDate)).setValue($0.toAnyObject())}
-        todos.map{collection.addDocument(data: $0.toAnyObject())}
+    var saveTodos: (Todo) throws -> Void = { todo in
+        collection.addDocument(data: todo.toAnyObject())
+    
     }
     
     //combine
     // var loadTodos: () -> AnyPublisher<[Todo], Error>  = ...
     var observeTodos: (@escaping (Result<[Todo], Error>) -> Void) -> Void = { callback in
+        
+        collection.addObserver(collection, forKeyPath: "todos", options: .new, context: <#T##UnsafeMutableRawPointer?#>)
+        collection.addObserver(<#T##observer: NSObject##NSObject#>, forKeyPath: <#T##String#>, options: <#T##NSKeyValueObservingOptions#>, context: <#T##UnsafeMutableRawPointer?#>)
+        collection.observe(<#T##keyPath: KeyPath<CollectionReference, Value>##KeyPath<CollectionReference, Value>#>, options: <#T##NSKeyValueObservingOptions#>, changeHandler: <#T##(CollectionReference, NSKeyValueObservedChange<Value>) -> Void#>)
+        
       /* collection.getDocuments {
             (snapshots, err) in snapshots
             guard let todos = snapshots?.documents.map { Todo.toTodo(data: $0.data()) }

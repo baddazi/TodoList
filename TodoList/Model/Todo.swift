@@ -7,12 +7,12 @@ struct Todo: Identifiable, Codable {
     }
     var name: String
     func toAnyObject()-> [String:String]{
-        return ["createdAt" : String(createdAt.timeIntervalSinceReferenceDate)]
+        return ["createdAt" : String(createdAt.timeIntervalSinceReferenceDate), "name" : name]
     }
     
     static func toTodo(data:[String:Any])-> Todo{
 
-       return Todo(createdAt: Date(timeIntervalSinceReferenceDate: Double(data["createdAt"] as! Substring)!))
+        return Todo(createdAt: Date(timeIntervalSinceReferenceDate: Double(data["createdAt"] as! Substring)!), name: (data["name"] as! String))
         
     }
     

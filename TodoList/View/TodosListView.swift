@@ -56,21 +56,10 @@ struct TodosListView: View {
     }
     
     func filterTodos() {
-        displayedTodos = todos.filter { todo in (searchedText.isEmpty || todo.name.uppercased().contains(searchedText.uppercased())) && (!isThisWeekChecked || inThisWeek(todo: todo)) }
-    }
-    func inThisWeek(todo: Todo) -> Bool {
-        let calendar = Calendar.current
-        let callculatedStartOfWeek=(Int(currentDate().timeIntervalSinceReferenceDate)) - (calendar.component(.weekday, from: currentDate())-1)  * 24 * 60 * 60;
-        
-        if((todo.createdAt) > calendar.startOfDay(for: Date(timeIntervalSinceReferenceDate: Double(callculatedStartOfWeek)))) {
-            return true
-        }
-        
-        return false
+        displayedTodos = todos.filter { todo in (searchedText.isEmpty || todo.name.uppercased().contains(searchedText.uppercased())) && (!isThisWeekChecked ||  Calendar.current.compare( currentDate(), to:todo.createdAt, toGranularity: .weekOfYear).rawValue == 0) }
     }
     
     func createTodo() {
-        
         self.todos.append(Todo(createdAt: currentDate(),name: "New Todo Name"))
         filterTodos()
         `throw`.try {

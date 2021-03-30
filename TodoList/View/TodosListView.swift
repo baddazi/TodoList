@@ -74,7 +74,8 @@ struct TodosListView: View {
         self.todos.append(Todo(createdAt: currentDate(),name: "New Todo Name"))
         filterTodos()
         `throw`.try {
-           try disk.saveTodos(todos)
+            try disk.saveTodos(todos)
+            
         }
     }
 }

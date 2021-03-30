@@ -9,8 +9,6 @@ import Foundation
 import Firebase
 import SwiftUI
 
-
-private var ref: DatabaseReference! = Database.database().reference(withPath: "todos")
 private var collection = Firestore.firestore().collection("todos")
 
 struct Database1: EnvironmentKey {
@@ -22,25 +20,39 @@ struct Database1: EnvironmentKey {
         todos.map{collection.addDocument(data: $0.toAnyObject())}
     }
     
-    
-    var loadTodos: () throws -> [Todo] = {
-        var todos: [Todo] = []
-        collection.getDocuments {(snapshots, err) in snapshots
-            snapshots?.documents.map{todos.append(Todo.toTodo(data: $0.data())) }
-            
+    //combine
+    // var loadTodos: () -> AnyPublisher<[Todo], Error>  = ...
+    var observeTodos: (@escaping (Result<[Todo], Error>) -> Void) -> Void = { callback in
+      /* collection.getDocuments {
+            (snapshots, err) in snapshots
+            guard let todos = snapshots?.documents.map { Todo.toTodo(data: $0.data()) }
+            else {
+                //call me maybe
+                return
+            }
+            callback(.success(todos!))
         }
-        
-        
-        return todos
+        */
+    
+       
+        //return todos
     }
     
+    // ....currentDate().filter  { currentDate()
+    //
+    // Calendar.compare(date1: date2:, with granularity: .week)
+    
+    
     var loadTodo: () -> Todo = {
-        var todo: Todo = Todo.sample
-        ref.observe(DataEventType.value, with: { (snapshot) in
+     /*   var todo: Todo = Todo.sample
+        ref.observe(DataEventType.value) { (snapshot) in
             todo = Todo.toTodo(data: snapshot.value as! [String : Any])
-        })
-        return todo
+        }
+         */ return Todo.sample
     }
     
     
 }
+
+
+

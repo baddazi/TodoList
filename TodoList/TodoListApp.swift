@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import UIKit
+import Firebase
 
 @main
 struct TodoListApp: App {
+    init(){
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
             TodosListView()

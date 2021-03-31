@@ -17,46 +17,33 @@ struct Database1: EnvironmentKey {
     
     var saveTodos: (Todo) throws -> Void = { todo in
         collection.addDocument(data: todo.toAnyObject())
-    
+        
     }
     
     //combine
     // var loadTodos: () -> AnyPublisher<[Todo], Error>  = ...
-    var observeTodos: (@escaping (Result<[Todo], Error>) -> Void) -> Void = { callback in
-        
-      /*collection.addObserver(collection, forKeyPath: "todos", options: .new, context: <#T##UnsafeMutableRawPointer?#>)
-       collection.addObserver(<#T##observer: NSObject##NSObject#>, forKeyPath: <#T##String#>, options: <#T##NSKeyValueObservingOptions#>, context: <#T##UnsafeMutableRawPointer?#>)
-        collection.observe(<#T##keyPath: KeyPath<CollectionReference, Value>##KeyPath<CollectionReference, Value>#>, options: <#T##NSKeyValueObservingOptions#>, changeHandler: <#T##(CollectionReference, NSKeyValueObservedChange<Value>) -> Void#>)*/
-        
-      /* collection.getDocuments {
-            (snapshots, err) in snapshots
-            guard let todos = snapshots?.documents.map { Todo.toTodo(data: $0.data()) }
-            else {
-                //call me maybe
+   var observeTodos: (@escaping (Result<[Todo], Error>) -> Void) -> Void = { callback in
+        collection.addSnapshotListener( includeMetadataChanges: true ) { documentSnapshot, error in
+          
+
+            guard let document = documentSnapshot else {
                 return
             }
-            callback(.success(todos!))
+           /* document.documentChanges.forEach{ diff in
+                if(diff.type == .added){
+                    todo = Todo.toTodo(data: diff.document.data())
+                 //rint("data ?: " + String(diff.document.data()))
+                }
+                
+            }*/
+            let todos = document.documents.map{Todo.toTodo(data: $0.data())}
+            todos.map{print($0.name)}
+            
+           // TodosListView().appendTodos(todo: todo!)
+            callback(.success(todos))
         }
-        */
-    
-       
-        //return todos
+        
     }
-    
-    // ....currentDate().filter  { currentDate()
-    //
-    // Calendar.compare(date1: date2:, with granularity: .week)
-    
-    
-    var loadTodo: () -> Todo = {
-     /*   var todo: Todo = Todo.sample
-        ref.observe(DataEventType.value) { (snapshot) in
-            todo = Todo.toTodo(data: snapshot.value as! [String : Any])
-        }
-         */ return Todo.sample
-    }
-    
-    
 }
 
 

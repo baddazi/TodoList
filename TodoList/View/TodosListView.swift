@@ -6,6 +6,7 @@ struct TodosListView: View {
     @Environment(\.[key: \Disk.self]) private var disk
     @Environment(\.[key: \Throw.self]) private var `throw`
     @Environment(\.[key: \Date.self]) private var currentDate
+    @Environment(\.[key: \Database1.self]) private var database
     
     @State var todos: [Todo] = []
     @State var displayedTodos: [Todo] = []
@@ -50,8 +51,10 @@ struct TodosListView: View {
             `throw`.try {
                 todos = try disk.loadTodos()
                 displayedTodos=todos
-                
+          
             }
+          //  var error : Error  continue frome here
+          //  database.observeTodos(Result<self.todos,error>)
         }
     }
     
@@ -59,6 +62,10 @@ struct TodosListView: View {
         displayedTodos = todos.filter { todo in (searchedText.isEmpty || todo.name.uppercased().contains(searchedText.uppercased())) && (!isThisWeekChecked ||  Calendar.current.compare( currentDate(), to:todo.createdAt, toGranularity: .weekOfYear).rawValue == 0) }
     }
     
+    func appendTodos(todo: Todo){
+        //todos.append(todo)
+        print("jmeno Todo: " + todo.name)
+    }
     func createTodo() {
         self.todos.append(Todo(createdAt: currentDate(),name: "New Todo Name"))
         filterTodos()
